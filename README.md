@@ -10,15 +10,18 @@ Sur VS Code :
 ## Gestion des données brut:
 
 Dans un premier temps nous avons transformé le fichier jeuDeDonnees_1.log en data.json, étant donné qu'un ficher json est plus facilement manipulable.
+
     def jsonToDict(JSONfile):
         with open(JSONfile) as json_data:
             data_dict = json.load(json_data)
         return(data_dict)
+
 Cette fonction nous permet ensuite de convertir ce fichier Json en un dictionnaire python.
 
 ## Création de la base de données SQL 
 
 On utilise sqlite pour gèrer notre base de donnée. Ainsi, pour créer la base de donnée, on lance la commande :
+
     conn = sqlite3.connect('database.db')
     cur = conn.cursor()
 
@@ -27,12 +30,14 @@ On utilise sqlite pour gèrer notre base de donnée. Ainsi, pour créer la base 
 
     conn.commit()
     conn.close()
+
 Commande qui se trouve dans le fichier ``create_table_sqlite.py``
 
 
 ## Base de données SQL
 
 Pour enregistrer les données dans la base de données SQL, nous avons choisi d'utiliser sqlite. Sqlite et facile et assez rapide à prendre en main grâce à python. Pour enregistrer les données sur la base de données nous utilisons la fonction suivante :
+
     def save_sql(dict):
     conn = sqlite3.connect('database.db')
     cur = conn.cursor()
@@ -52,5 +57,6 @@ Pour enregistrer les données dans la base de données SQL, nous avons choisi d'
     conn.commit()
     conn.close()   
 
-    save_sql(jsonToDict('data.json'))   
+    save_sql(jsonToDict('data.json')) 
+  
 Cette fonction ce trouve dans ``utils.py`` et peut être appellée en utilisant simplement save_sql(jsonToDict('NomDuFichier.json')).  
