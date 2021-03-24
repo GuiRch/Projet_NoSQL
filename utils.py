@@ -13,16 +13,6 @@ print(jsonToDict('data.json'))
 data = open("jeuDeDonnees_1.log", "r")
 print(data.read())
 #%%
-print(jsonToDict('data.json')[0])
-
-print(type(jsonToDict('data.json')[0]))
-print(len(jsonToDict('data.json')))
-
-id = jsonToDict('data.json')[1].get("id")
-print(id)
-#%%
-
-
 def save_sql(dict):
     conn = sqlite3.connect('database.db')
     cur = conn.cursor()
@@ -37,7 +27,7 @@ def save_sql(dict):
         path = jsonToDict('data.json')[line].get("path")
 
         data = (id, event_type, occuredON, version, graph_id, nature, object_name)
-        cur.executemany(" INSERT INTO dataset (id, event_type, occuredON, version, graph_id, nature, object_name) VALUES ( ?, ?, ?, ?, ?, ?, ?) ",data)
+        cur.executemany(" INSERT INTO dataset (id, event_type, occuredON, version, graph_id, nature, object_name) VALUES ( ?, ?, ?, ?, ?, ?, ?) ", (data,))
         # the secure way to enter the variable
     conn.commit()
     conn.close()   

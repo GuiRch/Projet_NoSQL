@@ -1,6 +1,5 @@
 [
     {"id":"be3b24c2-f01e-4816-945f-567f1ccb6acf","event-type":"TRACE_EVENT","occurredOn":"2021-03-14T22:22:59.205261","version":1,"graph-id":"file-states","nature":"raw-file","object-name":"File-25","path":"[TO_BE_PURGED, PURGED]"},
-    {"id":"be3b24c2-f01e-4816-945f-567f1ccb6acf","event-type":"TRACE_EVENT","occurredOn":"2021-03-14T22:22:59.205261","version":1,"graph-id":"file-states","nature":"raw-file","object-name":"File-25","path":"[TO_BE_PURGED, PURGED]"},
     {"id":"ac9d4c43-642e-4520-9878-3414bfb846b5","event-type":"TRACE_EVENT","occurredOn":"2021-03-14T22:22:59.284075","version":1,"graph-id":"file-states","nature":"raw-file","object-name":"File-79","path":"[RECEIVED, VERIFIED, PROCESSED, REJECTED, REMEDIED]"},
     {"id":"c97b0f44-df42-492c-86ec-75f771d8e7c5","event-type":"TRACE_EVENT","occurredOn":"2021-03-14T22:22:59.284256","version":1,"graph-id":"file-states","nature":"raw-file","object-name":"File-10","path":"[TO_BE_PURGED, PURGED]"},
     {"id":"ec0479cc-12da-4ae8-9521-e47e1a3b5e59","event-type":"TRACE_EVENT","occurredOn":"2021-03-14T22:22:59.284398","version":1,"graph-id":"file-states","nature":"raw-file","object-name":"File-94","path":"[TO_BE_PURGED, PURGED]"},
