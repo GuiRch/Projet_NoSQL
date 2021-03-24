@@ -12,6 +12,26 @@ print(jsonToDict('data.json'))
 
 data = open("jeuDeDonnees_1.log", "r")
 print(data.read())
+
+#%%
+def dict_factory(cursor, row):
+    d = {}
+    for idx, col in enumerate(cursor.description):
+        d[col[0]] = row[idx]
+    return d
+
+
+def sqlToDict(database = 'database.db'):
+    conn = sqlite3.connect(database)
+    conn.row_factory = dict_factory
+    c = conn.cursor()
+    c.execute('select * from dataset')
+
+    result = c.fetchall()
+    return result
+
+#print(type(sqlToDict()[0]))
+
 #%%
 def save_sql(dict):
     conn = sqlite3.connect('database.db')
@@ -32,6 +52,6 @@ def save_sql(dict):
     conn.commit()
     conn.close()   
 
-save_sql(jsonToDict('data.json'))
+#save_sql(jsonToDict('data.json'))
 
 
