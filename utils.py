@@ -26,8 +26,8 @@ def save_sql(dict):
         object_name = jsonToDict('data.json')[line].get("object-name")
         path = jsonToDict('data.json')[line].get("path")
 
-        data = (id, event_type, occuredON, version, graph_id, nature, object_name)
-        cur.executemany(" INSERT INTO dataset (id, event_type, occuredON, version, graph_id, nature, object_name) VALUES ( ?, ?, ?, ?, ?, ?, ?) ", (data,))
+        data = (id, event_type, occuredON, version, graph_id, nature, object_name, path)
+        cur.executemany(" INSERT INTO dataset (id, event_type, occuredON, version, graph_id, nature, object_name, path) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?) ", (data,))
         # the secure way to enter the variable
     conn.commit()
     conn.close()   
