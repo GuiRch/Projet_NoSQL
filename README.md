@@ -5,7 +5,7 @@
 Il faut également installer l'extension Sqlite sur Visual studio code ou utiliser un logiciel tiers pour visualiser comme DB Browser pour visualiser la base de donnée.
 
 Sur VS Code : 
-``ctrl`` ``shift`` ``P`` puis ```SQLite: Open Database`` dans la palette de commandes.
+``ctrl`` ``shift`` ``P`` puis ``SQLite: Open Database`` dans la palette de commandes.
 
 ## Gestion des données brut:
 

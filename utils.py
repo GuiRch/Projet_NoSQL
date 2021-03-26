@@ -1,6 +1,7 @@
 #%%
 import json
 import sqlite3
+from pymongo import MongoClient
 
 #%%
 def jsonToDict(JSONfile):
@@ -8,10 +9,10 @@ def jsonToDict(JSONfile):
         data_dict = json.load(json_data)
     return(data_dict)
 
-print(jsonToDict('data.json'))
+#print(jsonToDict('data.json'))
 
 data = open("jeuDeDonnees_1.log", "r")
-print(data.read())
+#print(data.read())
 
 #%%
 def dict_factory(cursor, row):
@@ -53,5 +54,14 @@ def save_sql(dict):
     conn.close()   
 
 #save_sql(jsonToDict('data.json'))
+
+def connectMongo(database,collection):
+    try :
+        client = MongoClient('localhost', 27017)
+        db = client[database]
+        collection = db[collection]
+        return("connecté !")
+    except ValueError:
+        return("oups")
 
 
