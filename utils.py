@@ -55,13 +55,17 @@ def save_sql(dict):
 
 #save_sql(jsonToDict('data.json'))
 
-def connectMongo(database,collection):
-    try :
-        client = MongoClient('localhost', 27017)
-        db = client[database]
-        collection = db[collection]
-        return("connecté !")
-    except ValueError:
-        return("oups")
+def insertMongo(liste=jsonToDict('data.json')):
+    # Connect to Mongo
+    client = MongoClient(port=27017)
+    db = client.data
+    try:
+        for elem in liste:
+            result = db.element.insert_one(elem)
+        return("elements stored succesfuly")
+    except:
+        return("an error occured")
+
+#insertMongo()
 
 
