@@ -60,3 +60,20 @@ Pour enregistrer les données dans la base de données SQL, nous avons choisi d'
     save_sql(jsonToDict('data.json')) 
   
 Cette fonction ce trouve dans ``utils.py`` et peut être appellée en utilisant simplement save_sql(jsonToDict('NomDuFichier.json')).  
+
+## Création de la base de données Mongo et projection des données
+
+La création de la base de données ``data`` se fait dans la fonction qui va inserer les la liste des dictionnaires dans la base de donnée Mongo avec la fonction ``insertMongo`` dans le fichier ``utils.py``
+
+Pour utiliser la fonction d'insertion dans la base de donnée Mongo, il faut au préalable lancer les codes suivant dans deux consoles séparés :
+
+    cd c:\Integ
+    cd mongodb-win32...
+    bin\mongod --dbpath data
+puis :
+    cd c:\Integ
+    cd mongodb-win32...
+    bin\mongo
+
+
+

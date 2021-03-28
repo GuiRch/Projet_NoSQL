@@ -4,7 +4,7 @@ import sqlite3
 from pymongo import MongoClient
 
 #%%
-def jsonToDict(JSONfile):
+def jsonToDict(JSONfile='data.json'):
     with open(JSONfile) as json_data:
         data_dict = json.load(json_data)
     return(data_dict)
@@ -34,7 +34,7 @@ def sqlToDict(database = 'database.db'):
 #print(type(sqlToDict()[0]))
 
 #%%
-def save_sql(dict):
+def save_sql(dict=jsonToDict('data.json')):
     conn = sqlite3.connect('database.db')
     cur = conn.cursor()
     for line in range(len(dict)):
