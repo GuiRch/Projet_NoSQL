@@ -15,10 +15,16 @@ def findById( id, database='data', collection='element'):
     mydb = myclient[database]
     mycol = mydb[collection]
 
-    for x in mycol.find({},{ "id": id }):
-        print(x)
+    myquery = { "id": id }
+    mydoc = mycol.find(myquery)
 
-findById("db2316d6-6b30-4c30-8c79-586ca0c06c21")
+    l = []
+    for x in mydoc:
+        l.append(x)
+
+    return l[0]
+
+print(findById("db2316d6-6b30-4c30-8c79-586ca0c06c21"))
 
 
 
