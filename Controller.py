@@ -78,3 +78,18 @@ list_of_status = ['TO_BE_PURGED', 'PURGED', 'RECEIVED', 'VERIFIED', 'PROCESSED',
 
 for status in list_of_status:
     print(status, " : ", countStatus(status))
+
+#%%
+life = []
+
+def cycleOfLife(name,database = 'data', collection = 'element'):
+    myclient = MongoClient("mongodb://localhost:27017/")
+    mydb = myclient[database]
+    mycol = mydb[collection]
+
+    life = findByName(name)
+
+    cyclePart = '[RECEIVED, VERIFIED, PROCESSED, CONSUMED]'
+    purgePart = '[TO_BE_PURGED, PURGED]'
+
+
