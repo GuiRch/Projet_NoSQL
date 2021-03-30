@@ -67,5 +67,18 @@ def insertMongo(liste=jsonToDict('data.json')):
         return("an error occured")
 
 #insertMongo()
+def parseString(string="[RECEIVED, VERIFIED, PROCESSED, CONSUMED]"):
+    string = string[1:]
+    string = string[:-1]
 
+    string = string.split(', ')
+    return(string)
+
+#parseString()
+
+
+# def replaceMongo(database='data',collection='element'):
+#     myclient = MongoClient("mongodb://localhost:27017/")
+#     mydb = myclient[database]
+#     mycol = mydb[collection]
 
