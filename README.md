@@ -7,6 +7,8 @@ Il faut également installer l'extension Sqlite sur Visual studio code ou utilis
 Sur VS Code : 
 ``ctrl`` ``shift`` ``P`` puis ``SQLite: Open Database`` dans la palette de commandes.
 
+Pour la partie Redis, installez redis-py avec ``pip install redis
+
 ## Gestion des données brut:
 
 Dans un premier temps nous avons transformé le fichier jeuDeDonnees_1.log en data.json, étant donné qu'un ficher json est plus facilement manipulable.
