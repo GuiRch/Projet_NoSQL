@@ -7,7 +7,7 @@ Il faut également installer l'extension Sqlite sur Visual studio code ou utilis
 Sur VS Code : 
 ``ctrl`` ``shift`` ``P`` puis ``SQLite: Open Database`` dans la palette de commandes.
 
-Pour la partie Redis, installez redis-py avec ``pip install redis
+Pour la partie Redis, installez redis-py avec ``pip install redis``
 
 ## Gestion des données brut:
 
@@ -152,4 +152,20 @@ Pour avoir la liste de tout les objets par status, lancez le script suivant :
 
     for status in list_of_status:
         print(status, " : ", countStatus(status))
+        
 
+## Création de la base de données Redis
+
+Dans une première console, lancer redis avec la commande
+```
+cd Integ/redis-6.2-rc1
+redis-server
+```
+
+puis dans une autre console : 
+```
+redis-cli
+```
+
+Il est possible de vérifier si le serveur est bien lancé avec la commdande ``ping`` qui doit répondre "PONG".
+Une fois cela fait, vous pouvez exécuter le code se trouvant dans *requests.py*
