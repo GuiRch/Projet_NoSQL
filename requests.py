@@ -27,7 +27,7 @@ def jsonToRedis(database = 'data.json'):
 
     return None
 
-#jsonToRedis()
+jsonToRedis()
 
 
 
